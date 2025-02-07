@@ -3,7 +3,7 @@
 2. to make board resolution a fixed size
 */
 console.log("hello world")
-const container1= document.querySelector("#container1");
+let container1= document.querySelector("#container1");
 const title=document.querySelector("#title");
 
 let rows=16;
@@ -26,10 +26,11 @@ gridButton.addEventListener ("click", (e)=>{
   rows=size;
   cols=size
 
-  const container2=document.createElement("div")
+  let container2=document.createElement("div")
   document.body.appendChild(container2)
-  createGrid(container2)}
-  else{
+  createGrid(container2)
+  container1=container2;
+} else{
     alert("You did not put in a number 1 to 100");
   };
 
