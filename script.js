@@ -1,7 +1,6 @@
 /* to-do-next
-1. set limits on new grid size
-2. work on removing older grids when pressing new grid button more than once
-3. to make board resolution a fixed size
+1. work on removing older grids when pressing new grid button more than once
+2. to make board resolution a fixed size
 */
 console.log("hello world")
 const container1= document.querySelector("#container1");
@@ -21,15 +20,18 @@ gridButton.textContent="Grid Size";
 
 gridButton.addEventListener ("click", (e)=>{
 
-  let size=prompt("How large of a grid would you like?");
-  console.log(size);
+  let size=prompt("How large of a grid would you like? (between 1x1 to 100x100)");
+  if(size>=1 && size<=100){console.log(size);
+  container1.remove()
   rows=size;
   cols=size
-  container1.remove()
+
   const container2=document.createElement("div")
   document.body.appendChild(container2)
-  container2.className="grid"
-  createGrid(container2)
+  createGrid(container2)}
+  else{
+    alert("You did not put in a number 1 to 100");
+  };
 
 });
 
