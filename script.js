@@ -68,7 +68,11 @@ x.appendChild(row);
   col.style.width=`${colWidth}px`;
 
   col.addEventListener("mouseenter", (e) => {
-    col.style.backgroundColor="green";
+    r=Math.floor(Math.random()*255);
+    g=Math.floor(Math.random()*255);
+    b=Math.floor(Math.random()*255);
+   
+    col.style.backgroundColor=`rgb(${r} ${g} ${b})`;
   });  
   row.appendChild(col);
   }
